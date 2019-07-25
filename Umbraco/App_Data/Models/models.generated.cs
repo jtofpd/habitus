@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ba3638e06f649f40")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d2c114e6b6f67d8d")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels
@@ -52,7 +52,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : Root, IHeroHighlights
+	public partial class Home : Root
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -76,26 +76,26 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 	}
 
-	/// <summary>Highlight</summary>
-	[PublishedModel("highlight")]
-	public partial class Highlight : PublishedContentModel
+	/// <summary>Highlights</summary>
+	[PublishedModel("highlights")]
+	public partial class Highlights : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "highlight";
+		public new const string ModelTypeAlias = "highlights";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Highlight, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Highlights, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Highlight(IPublishedContent content)
+		public Highlights(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -106,25 +106,26 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("highlightBackground")]
-		public IPublishedContent HighlightBackground => this.Value<IPublishedContent>("highlightBackground");
+		public Image HighlightBackground => this.Value<Image>("highlightBackground");
 
 		///<summary>
-		/// HighlightText
+		/// HighlightBody
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("highlightText")]
-		public string HighlightText => this.Value<string>("highlightText");
-	}
+		[ImplementPropertyType("highlightBody")]
+		public string HighlightBody => this.Value<string>("highlightBody");
 
-	// Mixin Content Type with alias "heroHighlights"
-	/// <summary>HeroHighlights</summary>
-	public partial interface IHeroHighlights : IPublishedContent
-	{
+		///<summary>
+		/// HighlightTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("highlightTitle")]
+		public string HighlightTitle => this.Value<string>("highlightTitle");
 	}
 
 	/// <summary>HeroHighlights</summary>
 	[PublishedModel("heroHighlights")]
-	public partial class HeroHighlights : PublishedContentModel, IHeroHighlights
+	public partial class HeroHighlights : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant

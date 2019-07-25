@@ -32,10 +32,10 @@ $(window).on('load', function() {
 	/*------------------
 		Background Set
 	--------------------*/
-	$('.set-bg').each(function() {
-		var bg = $(this).data('setbg');
-		$(this).css('background-image', 'url(' + bg + ')');
-	});
+	//$('.set-bg').each(function() {
+	//	var bg = $(this).data('setbg');
+	//	$(this).css('background-image', 'url(' + bg + ')');
+	//});
 
 
 	/*------------------
