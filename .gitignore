@@ -24,3 +24,5 @@ Umbraco/App_Data/TEMP/NuCache/NuCache\.Content\.db
 Umbraco/App_Data/TEMP/NuCache/NuCache\.Media\.db
 
 Umbraco/App_Data/Umbraco\.sdf
+
+*.sdf
